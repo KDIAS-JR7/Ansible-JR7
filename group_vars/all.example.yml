@@ -1,0 +1,15 @@
+---
+# Connection settings for Cisco IOS devices
+ansible_connection: ansible.netcommon.network_cli
+ansible_network_os: cisco.ios.ios
+
+# Mock variables required by specific playbooks
+defaultGateway: 192.168.40.254
+vlan_id: 10
+
+# Structured variables for advanced playbooks (HSRP & Multi-VLAN loops)
+vlans:
+  - id: 10
+    name: "Data_VLAN"
+  - id: 20
+    name: "Voice_VLAN"
