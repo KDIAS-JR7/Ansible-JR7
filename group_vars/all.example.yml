@@ -1,15 +1,14 @@
 ---
-# Connection settings for Cisco IOS devices
+# Connection defaults for the 16 Cisco IOS devices in the GNS3 Fabric
 ansible_connection: ansible.netcommon.network_cli
 ansible_network_os: cisco.ios.ios
 
-# Mock variables required by specific playbooks
-defaultGateway: 192.168.40.254
-vlan_id: 10
+# Centralized Syslog Collector Target (from Day 18 logs)
+syslog_server_ip: 192.168.122.1
+syslog_udp_port: 10514
+syslog_trap_level: 5          # Level 5 and above (Notifications, Warnings, Errors...)
 
-# Structured variables for advanced playbooks (HSRP & Multi-VLAN loops)
-vlans:
-  - id: 10
-    name: "Data_VLAN"
-  - id: 20
-    name: "Voice_VLAN"
+# Out-of-Band Management VLAN Definition (from Day 11 logs)
+management_vlan_id: 99
+management_vlan_name: "managementVLAN"
+management_vlan_gateway: 10.1.99.1
