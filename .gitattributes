@@ -1,0 +1,7 @@
+# Force GitHub to detect YAML files as Ansible playbooks
+*.yml linguist-language=Ansible
+*.yaml linguist-language=Ansible
+
+# Ensure they are counted in the language statistics bar
+*.yml linguist-detectable=true
+*.yaml linguist-detectable=true
